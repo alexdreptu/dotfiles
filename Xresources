@@ -1,0 +1,221 @@
+Xcursor.theme: Grounation
+Xcursor.size: 36
+
+Xft.dpi: 100
+Xft.hinting: true
+Xft.autohint: false
+Xft.rgba: rgb
+! hint styles: hintnone, hintslight, hintmedium, hintfull
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+! URxvt configuration
+URxvt*termName: rxvt-256color
+URxvt.geometry: 110x25
+URxvt*loginShell: true
+URxvt.scrollStyle: rxvt
+URxvt.saveLines: 20000
+URxvt*scrollBar: false
+URxvt*secondaryScroll: true
+URxvt.pointerBlank: true
+URxvt*saveLines: 65535
+URxvt.borderLess: false
+URxvt*urgentOnBell: true
+!URxvt*override-redirect: false
+!URxvt*borderLess: false
+!URxvt*internalBorder: 0
+!URxvt*externalBorder: 0
+! do not scroll with output
+!URxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+!URxvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+!URxvt*scrollTtyKeypress: true
+
+URxvt*font: xft:input mono:light:size=11.5
+URxvt*boldFont: xft:input mono:light:size=11.5
+!URxvt*dynamicColors: true
+!URxvt*inheritPixmap: true
+URxvt*letterSpace: -1
+!lineSpace patched for negative numbers
+!URxvt*lineSpace: -2
+URxvt*boldMode: false
+
+! - Cursor
+!URxvt*cursorUnderline: true
+URxvt*cursorBlink: true
+URxvt*cursorColor: #999954
+
+! - pseudo transparency
+!URxvt*shading: 10
+!URxvt*shading: 0
+!URxvt*transparent: true
+
+! - true transparency
+URxvt*depth: 24
+!URxvt*background: [85]#000000
+!URxvt*background: [85]#090909
+
+URxvt.perl-ext: default,url-select
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher: /usr/bin/chrome
+URxvt.url-select.underline: true
+URxvt.underlineURLs: true
+URxvt.matcher.button: 0
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.copyCommand: xsel -ib
+URxvt.pasteCommand: xsel -ob
+
+!URxvt.matcher.pattern.0: \\b(?:(?:https?|ftp|news|file):\/\/|mailto:)[ab-zA-Z0-9\-\@;\/?:&=%\$_.+!*\x27(),~#]+ [ab-zA-Z0-9\-\@;\/?:&=%\$_+!*\x27()~]
+!URxvt*matcher.pattern.0: \\b(?:(?:https?|ftp):\/\/|mailto:)[\\w\-\@;\/?:&=%\$_.+!*\x27(),~#]+ [\\w\-\@;\/?:&=%\$_+!*\x27()~]
+!URxvt*matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt*matcher.pattern.2: \\bhttps?:\/\/[\\w-.]*\/[\\w./?&@#-]*.(jpg|jpeg|png)
+URxvt*matcher.launcher.2: feh $0
+URxvt.matcher.rend.0: Uline fg8
+URxvt*matcher.pattern.3: \\bhttp:\/\/(www.youtube|youtube).com\/watch\\?v=([\\w-]*)
+URxvt*matcher.launcher.3: /usr/bin/vlc $0
+URxvt*matcher.pattern.4: \\bhttps?:\/\/[\\w-.]*\/[\\w./?&@#-]*.(?i)(mp3|mp4|ogg|wav|wma|flv)
+URxvt*matcher.launcher.4: mplayer $0
+
+! - colors
+!URxvt.tintColor: red
+URxvt.colorMode: true
+URxvt.colorBD: #66FFFF
+URxvt.colorBL: #CC0000
+URxvt.colorRV: #003366
+URxvt.colorUL: #5e8dc1
+
+URxvt.colorBDMode: on
+URxvt.colorRLMode: on
+URxvt.colorRVMode: on
+URxvt.colorULMode: on
+
+!URxvt.fading: 50
+!URxvt.fadeColor: black
+!URxvt.throughColor: #8080f0
+!URxvt.underlineColor: yellow
+!URxvt.highlightColor: #1E90FF
+
+! - Colorscheme
+URxvt*background: #1a1a10
+URxvt*foreground: #EBEBFF
+! black + red
+!URxvt*color0: #3f3f3f
+URxvt*color0: #000000
+URxvt*color1: #e01010
+! green + yellow
+URxvt*color2: #00AA00
+URxvt*color3: #FFFF00
+! blue + purple
+URxvt*color4: #112037
+URxvt*color5: #A020F0
+! cyan + white
+URxvt*color6: #5B5BC7
+URxvt*color7: #bbbbbb
+! bright-black + bright-red
+URxvt*color8: #6a6a6a
+URxvt*color9: #FF5555
+! bright-green + bright-yellow
+URxvt*color10: #90EE90
+URxvt*color11: #ffff2f
+! bright-blue + bright-purple
+URxvt*color12: #5B5BC7
+URxvt*color13: #e628ba
+! bright-cyan + bright-white
+URxvt*color14: #7D7DFB
+URxvt*color15: #dddddd
+
+! Rofi configuration
+rofi.modi: window,run,ssh
+rofi.opacity: 100
+rofi.width: 650
+rofi.lines: 12
+rofi.columns: 1
+rofi.font: Input Mono Regular 12
+rofi.fg: white
+rofi.bg: #171712
+rofi.color-enabled: true
+rofi.color-normal: #1a1a10,darkgrey,#1a1a10,#4d4d3a,white
+rofi.color-urgent: #4d2626,white,#4d2626,#274d27,white
+rofi.color-active: #26264d,white,#26264d,#274d27,white
+rofi.color-window: #1a1a10,#4d4d3a
+rofi.fg-active: #26264d
+rofi.fg-urgent: #4d2626
+rofi.hlfg-active: #26264d
+rofi.hlfg-urgent: #4d2626
+rofi.bg-active: #26264d
+rofi.bg-urgent: #4d4d26
+rofi.hlbg-active: #268BD2
+rofi.hlbg-urgent: #4d2626
+rofi.bgalt: #FDF6E3
+rofi.hlfg: #EEE8D5
+rofi.hlbg: #586E75
+rofi.bc: #002B36
+rofi.bw: 2
+rofi.location: 0
+rofi.padding: 0
+rofi.yoffset: -18
+rofi.xoffset: 0
+rofi.fixed-num-lines: false
+rofi.terminal: urxvtc
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e {ssh-client} {host}
+rofi.run-command: {cmd}
+rofi.run-list-command:
+rofi.run-shell-command: {terminal} -e {cmd}
+rofi.disable-history: false
+rofi.levenshtein-sort: true
+rofi.case-sensitive: false
+rofi.sidebar-mode: false
+rofi.lazy-filter-limit: 5000
+rofi.eh: 1
+rofi.auto-select: false
+rofi.parse-hosts: false
+rofi.combi-modi: window,run
+rofi.pid: /run/user/1000/rofi.pid
+rofi.kb-primary-paste: Control+Shift+v,Shift+Insert
+rofi.kb-secondary-paste: Control+v,Insert
+rofi.kb-clear-line: Control+u
+rofi.kb-move-front: Control+a
+rofi.kb-move-end: Control+e
+rofi.kb-move-word-back: Alt+b
+rofi.kb-move-word-forward: Alt+f
+rofi.kb-move-char-back: Left,Control+b
+rofi.kb-move-char-forward: Right,Control+f
+rofi.kb-remove-word-back: Control+Alt+h
+rofi.kb-remove-word-forward: Control+Alt+d
+rofi.kb-remove-char-forward: Delete,Control+d
+rofi.kb-remove-char-back: BackSpace,Control+h
+rofi.kb-accept-entry: Control+m,Return,KP_Enter
+rofi.kb-accept-custom: Control+Return
+rofi.kb-accept-entry-continue: Shift+Return
+rofi.kb-mode-next: Shift+Right,Control+Tab
+rofi.kb-mode-previous: Shift+Left,Control+Shift+Tab
+rofi.kb-toggle-case-sensitivity: grave,dead_grave
+rofi.kb-delete-entry: Shift+Delete
+rofi.kb-custom-1: Alt+1
+rofi.kb-custom-2: Alt+2
+rofi.kb-custom-3: Alt+3
+rofi.kb-custom-4: Alt+4
+rofi.kb-custom-5: Alt+5
+rofi.kb-custom-6: Alt+6
+rofi.kb-custom-7: Alt+7
+rofi.kb-custom-8: Alt+8
+rofi.kb-custom-9: Alt+9
+rofi.kb-row-left: Control+Page_Up
+rofi.kb-row-right: Control+Page_Down
+rofi.kb-row-up: Up,Alt+k,Shift+Tab
+rofi.kb-row-down: Down,Alt+j
+rofi.kb-row-tab: Tab
+rofi.kb-page-prev: Page_Up
+rofi.kb-page-next: Page_Down
+rofi.kb-row-first: Home,KP_Home
+rofi.kb-row-last: End,KP_End
+rofi.kb-row-select: Control+space
+rofi.kb-cancel: Escape
+rofi.window-format: {t:-16} ({c:10})
