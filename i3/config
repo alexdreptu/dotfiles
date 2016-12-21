@@ -236,4 +236,3 @@ exec --no-startup-id xset r rate 250 40
 #exec --no-startup-id xset m 4/3 0
 exec --no-startup-id xset m 3/2 0
 exec --no-startup-id xset dpms 0 600 1800
-exec --no-startup-id $HOME/.config/polybar/run.sh
