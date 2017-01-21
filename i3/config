@@ -109,6 +109,45 @@ mode "resize" {
 
 bindsym Mod1+r mode "resize"
 
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar {
+#      mode dock
+#      position top
+#  modifier Mod1
+#  #tray_output none
+#  workspace_buttons no
+#      font xft:Liberation Sans Bold 9
+#      colors {
+#        background #1A1A1A
+#        statusline #B37300
+#        focused_workspace  #7F7F7F #4B4B73 #FFFFFF
+#        active_workspace   #333333 #33334D #FFFFFF
+#        inactive_workspace #333333 #222222 #888888
+#        urgent_workspace   #7F7F7F #730000 #FFFFFF
+#      }
+#}
+
+bar {
+    output DVI-I-1
+        output DVI-D-0
+        mode dock
+        position bottom
+        modifier Mod1
+        #status_command none
+        tray_output DVI-I-1
+        workspace_buttons yes
+        font xft:dejavu sans bold 11
+        colors {
+            background #1a1a10
+                statusline #B37300
+                focused_workspace  #a9a9a9 #4d4d3a #ffffff
+                active_workspace   #333333 #33334D #ffffff
+                inactive_workspace #333333 #1a1a10 #888888
+                urgent_workspace   #7F7F7F #730000 #ffffff
+        }
+}
+
 # applications
 #bindsym Mod1+Control+n exec --no-startup-id xmms2 next
 #bindsym Mod1+Control+b exec --no-startup-id xmms2 prev
@@ -121,7 +160,8 @@ bindsym Mod1+e exec --no-startup-id rofi -show run
 bindsym Mod1+w exec --no-startup-id rofi -show window
 bindsym Mod1+c exec --no-startup-id clipy menu
 
-exec_always --no-startup-id $HOME/.config/polybar/run.sh 
+#exec_always --no-startup-id $HOME/.config/polybar/run.sh 
+exec_always --no-startup-id $HOME/.config/conkydzen2/run.sh
 
 # custom key binds
 bindsym Control+Shift+l move container to output right
@@ -184,10 +224,10 @@ force_display_urgency_hint 500 ms
 #tray_output <none|primary|output>
 
 # class                 border  backgr. text    indicator
-client.focused          #a9a9a9 #4d4d3a #ffffff #4d4d3a
-client.focused_inactive #808080 #2b2b21 #a9a9a9 #2b2b21
-client.unfocused        #808080 #2b2b21 #a9a9a9 #121212
-client.urgent           #a9a9a9 #730000 #ffffff #730000
+client.focused          #4d4d3a #4d4d3a #ffffff #4d4d3a
+client.focused_inactive #4d4d3a #2b2b21 #a9a9a9 #2b2b21
+client.unfocused        #4d4d3a #2b2b21 #a9a9a9 #121212
+client.urgent           #4d4d3a #730000 #ffffff #730000
 #client.background       red
 
 # floats and assignments
@@ -214,10 +254,12 @@ for_window [class="Deluge"] floating enable
 for_window [class="TeamSpeak 3"] floating enable
 for_window [class="Steam"] floating enable
 assign [class="Google-chrome"] 1
+assign [class="Opera"] 1
 assign [class="qpdfview"] 9
-assign [class="telegram"] 5
+assign [class="TelegramDesktop"] 5
 for_window [class="Clementine"] floating enable
 for_window [class="Skype"] floating enable
+for_window [class="Simplescreenrecorder"] floating enable
 
 # startup
 exec --no-startup-id xrandr --output DVI-I-1 --auto --left-of DVI-D-0
