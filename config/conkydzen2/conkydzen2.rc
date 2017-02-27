@@ -13,42 +13,33 @@ override_utf8_locale yes
 cpu_avg_samples 2
 
 TEXT
-^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/arch.xbm) ^fg(\#BFBFBF)$kernel\
- ^fg(\#B37300)|\
- ^fg(\#BFBFBF)$machine\
- ^fg(\#B37300)|\
- ^fg(\#BFBFBF)$uptime\
- ^fg(\#B37300)|\
- ${if_match ${cpu cpu0} > 60}^fg(\#CC5252)^i($HOME/.config/conkydzen2/icons/cpu.xbm) ${cpu cpu0}% ${else}^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/cpu.xbm)\
- ^fg(\#BFBFBF)${cpu cpu0}% ${endif}\
- ${if_match ${cpu cpu1} > 60}^fg(\#CC5252)^i($HOME/.config/conkydzen2/icons/cpu.xbm) ${cpu cpu1}% ${else}^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/cpu.xbm)\
- ^fg(\#BFBFBF)${cpu cpu1}% ${endif}\
- ${if_match ${cpu cpu2} > 60}^fg(\#CC5252)^i($HOME/.config/conkydzen2/icons/cpu.xbm) ${cpu cpu2}% ${else}^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/cpu.xbm)\
- ^fg(\#BFBFBF)${cpu cpu2}% ${endif}\
- ${if_match ${cpu cpu3} > 60}^fg(\#CC5252)^i($HOME/.config/conkydzen2/icons/cpu.xbm) ${cpu cpu3}% ${else}^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/cpu.xbm)\
- ^fg(\#BFBFBF)${cpu cpu3}% ${endif}\
- ^fg(\#B37300)|\
- ${if_match ${hwmon 2 temp 2} > 50}^fg(\#CC5252)^i($HOME/.config/conkydzen2/icons/temp.xbm)${hwmon 2 temp 2}°C ${else}^fg(\#5290CC)\
- ^i($HOME/.config/conkydzen2/icons/temp.xbm)^fg(\#BFBFBF)${hwmon 2 temp 2}°C ${endif}\
- ${if_match ${hwmon 2 temp 3} > 50}^fg(\#CC5252)^i($HOME/.config/conkydzen2/icons/temp.xbm)${hwmon 2 temp 3}°C ${else}^fg(\#5290CC)\
- ^i($HOME/.config/conkydzen2/icons/temp.xbm)^fg(\#BFBFBF)${hwmon 2 temp 3}°C ${endif}\
- ${if_match ${hwmon 2 temp 4} > 50}^fg(\#CC5252)^i($HOME/.config/conkydzen2/icons/temp.xbm)${hwmon 2 temp 4}°C ${else}^fg(\#5290CC)\
- ^i($HOME/.config/conkydzen2/icons/temp.xbm)^fg(\#BFBFBF)${hwmon 2 temp 4}°C ${endif}\
- ${if_match ${hwmon 2 temp 5} > 50}^fg(\#CC5252)^i($HOME/.config/conkydzen2/icons/temp.xbm)${hwmon 2 temp 5}°C ${else}^fg(\#5290CC)\
- ^i($HOME/.config/conkydzen2/icons/temp.xbm)^fg(\#BFBFBF)${hwmon 2 temp 5}°C ${endif}\
- ^fg(\#B37300)|\
- ${if_match $memperc > 70}^fg(\#CC5252)^i($HOME/.config/conkydzen2/icons/mem.xbm) $memeasyfree ($memperc%) ${else}^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/mem.xbm)\
- ^fg(\#BFBFBF)F: $memeasyfree / T: $memmax  ${endif}\
- ^fg(\#B37300)|\
- ^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/file.xbm) ^fg(\#BFBFBF)${fs_free /}\
- ^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/hdd.xbm) ^fg(\#52CC52)${diskio_read sda}\
- ^fg(\#CC5252)${diskio_write sda}\
- ^fg(\#B37300)|\
- ^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/home.xbm) ^fg(\#BFBFBF)${fs_free /home}\
- ^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/hdd.xbm) ^fg(\#52CC52)${diskio_read sdb}\
- ^fg(\#CC5252)${diskio_write sdb}\
- ^fg(\#B37300)|\
- ^fg(\#52CC52)^i($HOME/.config/conkydzen2/icons/net_down.xbm) ${downspeed enp3s0}\
- ^fg(\#CC5252)^i($HOME/.config/conkydzen2/icons/net_up.xbm) ${upspeed enp3s0}\
- ^fg(\#B37300)|\
- ^fg(\#BFBFBF)${time %d-%m-%Y} ^fg(\#5290CC)^i($HOME/.config/conkydzen2/icons/clock.xbm) ^fg(\#BFBFBF)${time %H:%M:%S}
+^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) \
+^fg(\#BFBFBF)$kernel \
+^fg(\#808060)| \
+^fg(\#BFBFBF)$machine \
+^fg(\#808060)| \
+^fg(\#BFBFBF)$uptime \
+^fg(\#808060)| \
+${if_match ${cpu cpu0} > 60}^fn(fontawesome)^fg(\#CC5252) ^fn(dejavu sans:bold:size=11:antialias=true) ${cpu cpu0}% ${else}^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${cpu cpu0}% ${endif}\
+${if_match ${cpu cpu1} > 60}^fn(fontawesome)^fg(\#CC5252) ^fn(dejavu sans:bold:size=11:antialias=true) ${cpu cpu1}% ${else}^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${cpu cpu1}% ${endif}\
+${if_match ${cpu cpu2} > 60}^fn(fontawesome)^fg(\#CC5252) ^fn(dejavu sans:bold:size=11:antialias=true) ${cpu cpu2}% ${else}^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${cpu cpu2}% ${endif}\
+${if_match ${cpu cpu3} > 60}^fn(fontawesome)^fg(\#CC5252) ^fn(dejavu sans:bold:size=11:antialias=true) ${cpu cpu3}% ${else}^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${cpu cpu3}% ${endif}\
+^fg(\#808060)| \
+${if_match ${hwmon 2 temp 2} > 50}^fn(fontawesome)^fg(\#CC5252) ^fn(dejavu sans:bold:size=11:antialias=true) ${hwmon 2 temp 2}°C ${else}^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${hwmon 2 temp 2}°C ${endif} \
+${if_match ${hwmon 2 temp 3} > 50}^fn(fontawesome)^fg(\#CC5252) ^fn(dejavu sans:bold:size=11:antialias=true) ${hwmon 2 temp 3}°C ${else}^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${hwmon 2 temp 3}°C ${endif} \
+${if_match ${hwmon 2 temp 4} > 50}^fn(fontawesome)^fg(\#CC5252) ^fn(dejavu sans:bold:size=11:antialias=true) ${hwmon 2 temp 4}°C ${else}^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${hwmon 2 temp 4}°C ${endif} \
+${if_match ${hwmon 2 temp 5} > 50}^fn(fontawesome)^fg(\#CC5252) ^fn(dejavu sans:bold:size=11:antialias=true) ${hwmon 2 temp 5}°C ${else}^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${hwmon 2 temp 5}°C ${endif} \
+^fg(\#808060)| \
+${if_match $memperc > 70}^fn(fontawesome)^fg(\#CC5252) $memeasyfree ($memperc%) ${else}^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)F: $memeasyfree / T: $memmax ${endif} \
+^fg(\#808060)| \
+^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${fs_free /} \
+^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#52CC52)${diskio_read sda} ^fg(\#CC5252)${diskio_write sda} \
+^fg(\#808060)| \
+^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${fs_free /home} \
+^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#52CC52)${diskio_read sdb} ^fg(\#CC5252)${diskio_write sdb} \
+^fg(\#808060)| \
+^fn(fontawesome)^fg(\#52CC52) ^fn(dejavu sans:bold:size=11:antialias=true) ${downspeed enp3s0} \
+^fn(fontawesome)^fg(\#CC5252) ^fn(dejavu sans:bold:size=11:antialias=true) ${upspeed enp3s0} \
+^fg(\#808060)| \
+^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${time %d-%m-%Y} \
+^fn(fontawesome)^fg(\#5290CC) ^fn(dejavu sans:bold:size=11:antialias=true) ^fg(\#BFBFBF)${time %H:%M:%S}

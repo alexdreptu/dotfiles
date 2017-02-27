@@ -224,9 +224,9 @@ force_display_urgency_hint 500 ms
 #tray_output <none|primary|output>
 
 # class                 border  backgr. text    indicator
-client.focused          #4d4d3a #4d4d3a #ffffff #4d4d3a
-client.focused_inactive #4d4d3a #2b2b21 #a9a9a9 #2b2b21
-client.unfocused        #4d4d3a #2b2b21 #a9a9a9 #121212
+client.focused          #4d4d3a #808060 #ffffff #4d4d3a
+client.focused_inactive #4d4d3a #4D4D3A #a9a9a9 #2b2b21
+client.unfocused        #4d4d3a #404030 #a9a9a9 #121212
 client.urgent           #4d4d3a #730000 #ffffff #730000
 #client.background       red
 
