@@ -1,6 +1,7 @@
 from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import *
 
+
 class Naquadria(ColorScheme):
     progress_bar_color = 111
 
@@ -12,13 +13,13 @@ class Naquadria(ColorScheme):
 
         elif context.in_browser:
             if context.selected:
-                bg = 60
+                bg = 101
             else:
                 attr = normal
             if context.empty or context.error:
                 bg = red
             if context.border:
-                fg = 111
+                fg = 101
             if context.media:
                 if context.image:
                     fg = 139
@@ -31,8 +32,8 @@ class Naquadria(ColorScheme):
                 fg = 111
             elif context.executable and not \
                     any((context.media, context.container,
-                        context.fifo, context.socket)):
-                        fg = 151
+                         context.fifo, context.socket)):
+                fg = 151
             if context.socket:
                 fg = magenta
             if context.fifo or context.device:
@@ -52,7 +53,7 @@ class Naquadria(ColorScheme):
                 if context.selected:
                     attr = bold
                     fg = white
-                    bg = 60
+                    bg = 101
                 if context.marked:
                     attr |= bold
                     fg = yellow
@@ -73,7 +74,7 @@ class Naquadria(ColorScheme):
             elif context.tab:
                 if context.good:
                     fg = white
-                    bg = 60
+                    bg = 101
                 if context.bad:
                     fg = white
             elif context.link:
@@ -117,7 +118,6 @@ class Naquadria(ColorScheme):
                     fg = self.progress_bar_color
                 else:
                     bg = self.progress_bar_color
-
 
         if context.vcsfile and not context.selected:
             attr &= ~bold
