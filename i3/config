@@ -256,10 +256,11 @@ for_window [class="Steam"] floating enable
 assign [class="Google-chrome"] 1
 assign [class="Opera"] 1
 assign [class="qpdfview"] 9
-assign [class="TelegramDesktop"] 5
 for_window [class="Clementine"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Simplescreenrecorder"] floating enable
+assign [class="TelegramDesktop"] 10
+for_window [class="TelegramDesktop"] floating enable
 
 # startup
 exec --no-startup-id xrandr --output DVI-I-1 --auto --left-of DVI-D-0

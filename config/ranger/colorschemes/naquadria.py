@@ -29,11 +29,11 @@ class Naquadria(ColorScheme):
                 attr = bold
                 fg = 138
             if context.directory:
-                fg = 111
+                fg = 103
             elif context.executable and not \
                     any((context.media, context.container,
                          context.fifo, context.socket)):
-                fg = 151
+                fg = 108
             if context.socket:
                 fg = magenta
             if context.fifo or context.device:
