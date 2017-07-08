@@ -3,15 +3,16 @@ Xcursor.size: 36
 
 Xft.dpi: 100
 Xft.hinting: true
+Xft.antialias: true
 Xft.autohint: false
 Xft.rgba: rgb
 ! hint styles: hintnone, hintslight, hintmedium, hintfull
-Xft.hintstyle: hintslight
+Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 
 ! URxvt configuration
 URxvt*termName: rxvt-256color
-URxvt.geometry: 110x25
+URxvt.geometry: 125x25
 URxvt*loginShell: true
 URxvt.scrollStyle: rxvt
 URxvt.saveLines: 20000
@@ -32,14 +33,15 @@ URxvt*urgentOnBell: true
 ! scroll back to the bottom on keypress
 !URxvt*scrollTtyKeypress: true
 
-URxvt*font: xft:input mono:light:size=11.5
-URxvt*boldFont: xft:input mono:light:size=11.5
+URxvt*font: xft:input mono:light:size=10.5
+URxvt*boldFont: xft:input mono:light:size=10.5
 !URxvt*dynamicColors: true
 !URxvt*inheritPixmap: true
-URxvt*letterSpace: -1
+URxvt*letterSpace: -2
 !lineSpace patched for negative numbers
 !URxvt*lineSpace: -2
 URxvt*boldMode: false
+URxvt*skipBuiltinGlyphs: true
 
 ! - Cursor
 !URxvt*cursorUnderline: true
@@ -52,7 +54,9 @@ URxvt*cursorColor: #999954
 !URxvt*transparent: true
 
 ! - true transparency
+! 32 for true transparency
 URxvt*depth: 24
+!URxvt*depth: 32
 !URxvt*background: [85]#000000
 !URxvt*background: [85]#090909
 
@@ -102,7 +106,8 @@ URxvt.colorULMode: on
 !URxvt.highlightColor: #1E90FF
 
 ! - Colorscheme
-URxvt*background: #1a1a10
+!URxvt*background: #1a1a10
+URxvt*background: #272822
 URxvt*foreground: #EBEBFF
 ! black + red
 !URxvt*color0: #3f3f3f
@@ -136,14 +141,14 @@ rofi.opacity: 100
 rofi.width: 650
 rofi.lines: 12
 rofi.columns: 1
-rofi.font: Input Mono Regular 12
+rofi.font: Input Mono Regular 11.5
 rofi.fg: white
 rofi.bg: #171712
 rofi.color-enabled: true
-rofi.color-normal: #1a1a10,darkgrey,#1a1a10,#4d4d3a,white
+rofi.color-normal: #272822,darkgrey,#272822,#674C80,white
 rofi.color-urgent: #4d2626,white,#4d2626,#274d27,white
 rofi.color-active: #26264d,white,#26264d,#274d27,white
-rofi.color-window: #1a1a10,#4d4d3a
+rofi.color-window: #272822,#808060
 rofi.fg-active: #26264d
 rofi.fg-urgent: #4d2626
 rofi.hlfg-active: #26264d
@@ -159,7 +164,7 @@ rofi.bc: #002B36
 rofi.bw: 2
 rofi.location: 0
 rofi.padding: 0
-rofi.yoffset: -18
+rofi.yoffset: -100
 rofi.xoffset: 0
 rofi.fixed-num-lines: false
 rofi.terminal: urxvtc
@@ -209,13 +214,13 @@ rofi.kb-custom-8: Alt+8
 rofi.kb-custom-9: Alt+9
 rofi.kb-row-left: Control+Page_Up
 rofi.kb-row-right: Control+Page_Down
-rofi.kb-row-up: Up,Alt+k,Shift+Tab
-rofi.kb-row-down: Down,Alt+j
+rofi.kb-row-up: Up,Control+p
+rofi.kb-row-down: Down,Control+n
 rofi.kb-row-tab: Tab
 rofi.kb-page-prev: Page_Up
 rofi.kb-page-next: Page_Down
 rofi.kb-row-first: Home,KP_Home
 rofi.kb-row-last: End,KP_End
 rofi.kb-row-select: Control+space
-rofi.kb-cancel: Escape
+rofi.kb-cancel: Escape,Control+g,Control+bracketleft
 rofi.window-format: {t:-16} ({c:10})

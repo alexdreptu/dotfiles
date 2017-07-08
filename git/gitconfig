@@ -1,54 +1,58 @@
 [user]
-	name = Alexandru Dreptu
-	email = alexdreptu@gmail.com
+    name = Alexandru Dreptu
+    email = alexdreptu@gmail.com
+	signingkey = EB0A458C451465EADAF7EF5A180A39E6DFA79042
 [core]
     whitespace = trailing-space,space-before-tab
 [apply]
-	whitespace = fix
+    whitespace = fix
 #[branch "master"]
 #	rebase = true
 #[branch]
 #	autosetuprebase = always
 [push]
-	default = tracking
+    default = tracking
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [alias]
     cl = clone
-	ch = checkout
-	lol = log --pretty=\"format:%C(blue bold)::%Creset %C(white bold)%h%Creset - %C(white)%s%Creset - %C(white bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(green bold)%cr%Creset)\"
-	br = branch
-	st = status -s -b --ignored
-	sh = show
-	fc = fetch
-	co = commit
-	a = add
-	df = diff
-	lc = log --pretty=\"format:%C(blue bold)::%Creset %C(white bold)%h%Creset - %C(white)%s%Creset - %C(white bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(green bold)%cr%Creset)\" --branches --not --remotes
-	lm = log --pretty=\"format:%C(blue bold)::%Creset %C(white bold)%h%Creset - %C(white)%s%Creset - %C(white bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(green bold)%cr%Creset)\" --merges
-	lf = ls-files
+    ch = checkout
+    lol = log --pretty=\"format:%C(blue bold)::%Creset %C(white bold)%h%Creset - %C(white)%s%Creset - %C(white bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(green bold)%cr%Creset)\"
+    br = branch
+    st = status -s -b --ignored
+    sh = show
+    fc = fetch
+    co = commit
+    a = add
+    rbi = rebase -i
+    df = diff
+    lc = log --pretty=\"format:%C(blue bold)::%Creset %C(white bold)%h%Creset - %C(white)%s%Creset - %C(white bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(green bold)%cr%Creset)\" --branches --not --remotes
+    lm = log --pretty=\"format:%C(blue bold)::%Creset %C(white bold)%h%Creset - %C(white)%s%Creset - %C(white bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(green bold)%cr%Creset)\" --merges
+    lf = ls-files
 [core]
-	editor = vim
+    editor = vim
 [color]
-	ui = always
-	interactive = auto
+    ui = always
+    interactive = auto
 [color "branch"]
-	current = green bold
-	local = white
-	remote = red bold
+    current = green bold
+    local = white
+    remote = red bold
 [color "status"]
-	added = yellow bold
-	changed = green bold
-	untracked = red bold
+    added = yellow bold
+    changed = green bold
+    untracked = red bold
 [color "diff"]
-	meta = white dim
-	frag = cyan
-	old = red bold
-	new = green bold
+    meta = white dim
+    frag = cyan
+    old = red bold
+    new = green bold
 #[pull]
 #	rebase = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[commit]
+	gpgsign = true
