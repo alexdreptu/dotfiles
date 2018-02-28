@@ -24,7 +24,10 @@
     fc = fetch
     co = commit
     a = add
+    rbis = rebase -i --autosquash
     rbi = rebase -i
+    fix = commit --fixup
+    squ = commit --squash
     df = diff
     lc = log --pretty=\"format:%C(blue bold)::%Creset %C(white bold)%h%Creset - %C(white)%s%Creset - %C(white bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(green bold)%cr%Creset)\" --branches --not --remotes
     lm = log --pretty=\"format:%C(blue bold)::%Creset %C(white bold)%h%Creset - %C(white)%s%Creset - %C(white bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(green bold)%cr%Creset)\" --merges
@@ -55,4 +58,4 @@
     process = git-lfs filter-process
     required = true
 [commit]
-	gpgsign = true
+    gpgsign = true

@@ -13,7 +13,7 @@ class Naquadria(ColorScheme):
 
         elif context.in_browser:
             if context.selected:
-                bg = 101
+                bg = 97
             else:
                 attr = normal
             if context.empty or context.error:
@@ -53,7 +53,7 @@ class Naquadria(ColorScheme):
                 if context.selected:
                     attr = bold
                     fg = white
-                    bg = 101
+                    bg = 97
                 if context.marked:
                     attr |= bold
                     fg = yellow
@@ -74,7 +74,7 @@ class Naquadria(ColorScheme):
             elif context.tab:
                 if context.good:
                     fg = white
-                    bg = 101
+                    bg = 97
                 if context.bad:
                     fg = white
             elif context.link:
