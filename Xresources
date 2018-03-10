@@ -13,7 +13,7 @@ Xft.lcdfilter: lcddefault
 ! URxvt configuration
 URxvt*termName: rxvt-256color
 !URxvt.geometry: 120x22
-URxvt.geometry: 125x22
+URxvt.geometry: 140x22
 URxvt*loginShell: true
 URxvt.scrollStyle: rxvt
 URxvt.saveLines: 20000
@@ -34,11 +34,11 @@ URxvt*urgentOnBell: true
 ! scroll back to the bottom on keypress
 !URxvt*scrollTtyKeypress: true
 
-URxvt*font: xft:input mono:regular:size=10.5
-URxvt*boldFont: xft:input mono:regular:size=10.5
+URxvt*font: xft:input mono:regular:size=10
+URxvt*boldFont: xft:input mono:regular:size=10
 !URxvt*dynamicColors: true
 !URxvt*inheritPixmap: true
-!URxvt*letterSpace: -2
+URxvt*letterSpace: -1
 URxvt*lineSpace: 1
 URxvt*boldMode: false
 URxvt*skipBuiltinGlyphs: true
@@ -198,14 +198,14 @@ rofi.lines: 12
 rofi.columns: 1
 rofi.separator-style: none
 rofi.hide-scrollbar: true
-rofi.font: Input Mono Medium 11.5
+rofi.font: Input Mono Medium 11
 rofi.fg: white
 rofi.bg: #171712
 rofi.color-enabled: true
 rofi.color-normal: #272822,white,#272822,#7F6399,white
 rofi.color-urgent: #4d2626,white,#4d2626,#274d27,white
 rofi.color-active: #26264d,white,#26264d,#274d27,white
-rofi.color-window: #272822,#737356
+rofi.color-window: #272822,#CCCC89
 rofi.fg-active: #26264d
 rofi.fg-urgent: #4d2626
 rofi.hlfg-active: #26264d
