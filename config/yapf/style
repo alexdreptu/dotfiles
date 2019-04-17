@@ -1,8 +1,10 @@
 [style]
 based_on_style = pep8
-column_limit = 80
+column_limit = 90
 dedent_closing_brackets = false
 split_before_named_assigns = false
 split_before_first_argument = false
+split_before_logical_operator = true
 coalesce_brackets = false
 allow_multiline_lambdas = true
+allow_multiline_dictionary_keys = true

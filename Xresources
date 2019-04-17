@@ -1,5 +1,10 @@
+!Xcursor.theme: Oxygen Indigo
+!Xcursor.theme: ComixCursors Black
+!Xcursor.theme: Oxygen Silver Grey
 Xcursor.theme: Grounation
-Xcursor.size: 48
+!Xcursor.theme: Capitaine Cursors
+! sizes: 16, 24, 32, 48, 64
+Xcursor.size: 32
 
 Xft.dpi: 102
 Xft.antialias: true
@@ -13,7 +18,8 @@ Xft.lcdfilter: lcddefault
 ! URxvt configuration
 URxvt*termName: rxvt-256color
 !URxvt.geometry: 120x22
-URxvt.geometry: 140x22
+!URxvt.geometry: 120x21
+URxvt.geometry: 134x21
 URxvt*loginShell: true
 URxvt.scrollStyle: rxvt
 URxvt.saveLines: 20000
@@ -34,19 +40,23 @@ URxvt*urgentOnBell: true
 ! scroll back to the bottom on keypress
 !URxvt*scrollTtyKeypress: true
 
-URxvt*font: xft:input mono:regular:size=10
-URxvt*boldFont: xft:input mono:regular:size=10
+!URxvt*font: xft:Ubuntu Mono:size=11
+!URxvt*boldFont: xft:Ubuntu Mono:size=11
+URxvt*font: xft:Fira Code:medium:size=10
+URxvt*boldFont: xft:Fira Code:medium:size=10
 !URxvt*dynamicColors: true
 !URxvt*inheritPixmap: true
-URxvt*letterSpace: -1
+!URxvt*letterSpace: 1
+!URxvt*lineSpace: 3
 URxvt*lineSpace: 1
 URxvt*boldMode: false
 URxvt*skipBuiltinGlyphs: true
 
 ! - Cursor
 !URxvt*cursorUnderline: true
-URxvt*cursorBlink: false
-URxvt*cursorColor: #ffde73
+URxvt*cursorBlink: true
+URxvt*cursorColor: #ceb8f9
+!URxvt*cursorColor: #d8ecc6
 
 ! - pseudo transparency
 !URxvt*shading: 10
@@ -62,8 +72,7 @@ URxvt*depth: 32
 
 URxvt.perl-ext: default,url-select
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
-!URxvt.url-select.launcher: /usr/bin/chrome
-URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.launcher: /usr/bin/chrome
 URxvt.url-select.underline: true
 URxvt.underlineURLs: true
 URxvt.matcher.button: 0
@@ -107,56 +116,15 @@ URxvt.colorULMode: on
 !URxvt.highlightColor: #1E90FF
 
 ! - Colorscheme
-URxvt*background: #272822
-URxvt*foreground: #EBEBFF
-! black + red
-!URxvt*color0: #000000
-!URxvt*color1: #e01010
-! green + yellow
-!URxvt*color2: #00AA00
-!URxvt*color3: #FFFF00
-! blue + purple
-!URxvt*color4: #112037
-!URxvt*color5: #A020F0
-! cyan + white
-!URxvt*color6: #5B5BC7
-!URxvt*color7: #bbbbbb
-! bright-black + bright-red
-!URxvt*color8: #6a6a6a
-!URxvt*color9: #FF5555
-! bright-green + bright-yellow
-!URxvt*color10: #90EE90
-!URxvt*color11: #ffff2f
-! bright-blue + bright-purple
-!URxvt*color12: #5B5BC7
-!URxvt*color13: #e628ba
-! bright-cyan + bright-white
-!URxvt*color14: #7D7DFB
-!URxvt*color15: #dddddd
-
-XTerm*geometry: 120x21
-XTerm*faceName: Source Code Pro:Regular:size=11.5
-!XTerm*font: 11
-XTerm*scaleHeight: 1.1
-XTerm*utf8: 1
-XTerm*pointerColor: #ffde73
-XTerm*pointerColorBackground: black
-XTerm*cursorColor: #ffde73
-XTerm*cursorBlink: false
-XTerm*metaSendsEscape: true
-XTerm*reverseVideo: false
-XTerm*colorBDMode: true
-XTerm*colorBD: rgb:82/a4/d3
-XTerm*colorULMode: true
-XTerm*colorUL: rgb:e4/e4/e4
-XTerm*saveLines: 4096
-XTerm*ScrollBar: false
-XTerm*ScrollKey: true
-XTerm*visualbell: false
-XTerm*bellIsUrgent: false
+URxvt*background: #282729
+!URxvt*foreground: #dcf
+URxvt*foreground: #ffffff
+!URxvt*foreground: #d2c6ec
+!URxvt*foreground: #d8ecc6
+!URxvt*foreground: #f2ffb3
 
 *background: #272822
-*foreground: #EBEBFF
+*foreground: #ffffff
 
 ! black
 *.color0:       #272822
@@ -175,7 +143,7 @@ XTerm*bellIsUrgent: false
 *.color11:      #ffb378
 
 ! blue
-*.color4:       #91ddff
+*.color4:       #80bfff
 *.color12:      #65b2ff
 
 ! magenta
@@ -198,14 +166,15 @@ rofi.lines: 12
 rofi.columns: 1
 rofi.separator-style: none
 rofi.hide-scrollbar: true
-rofi.font: Input Mono Medium 11
+!rofi.font: Ubuntu Mono 13
+rofi.font: Fira Code Medium 11.5
 rofi.fg: white
-rofi.bg: #171712
+rofi.bg: #272822 
 rofi.color-enabled: true
-rofi.color-normal: #272822,white,#272822,#7F6399,white
+rofi.color-normal: #302f32,white,#302f32,#75609f,white
 rofi.color-urgent: #4d2626,white,#4d2626,#274d27,white
 rofi.color-active: #26264d,white,#26264d,#274d27,white
-rofi.color-window: #272822,#CCCC89
+rofi.color-window: #302f32,#ac9fc6
 rofi.fg-active: #26264d
 rofi.fg-urgent: #4d2626
 rofi.hlfg-active: #26264d

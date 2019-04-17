@@ -7,7 +7,7 @@ style "no-resize-handle"
 class "GtkWidget" style "no-resize-handle"
 
 style "vimfix" {
-      bg[NORMAL] = "#272822" # this matches my gvim theme 'Normal' bg color.
+      bg[NORMAL] = "#75609f" # this matches my gvim theme 'Normal' bg color.
 }
 
 widget "vim-main-window.*GtkForm" style "vimfix"

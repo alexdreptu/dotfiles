@@ -1,2 +1,6 @@
+[FORMAT]
+max-line-length=90
+
 [MESSAGES CONTROL]
+disable=C010
 disable=C0103
