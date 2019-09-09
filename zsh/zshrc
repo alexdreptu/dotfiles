@@ -9,6 +9,8 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+bindkey -e command
+
 alias ls='ls --color=yes'
 alias dir='dir --color=yes'
 alias grep='grep --color=yes'

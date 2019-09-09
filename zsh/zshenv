@@ -1,0 +1,32 @@
+export EDITOR="vim"
+
+# Go related
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+
+# Node.js related
+export NPM_PKG=$HOME/.npm-pkg
+export NPM_BIN=$NPM_PKG/bin
+export NODE_PATH=$NPM_PKG/lib/node_modules
+
+export PATH=:$GOBIN:$PATH
+export PATH=:$NPM_BIN:$PATH
+export PATH=:$HOME/.gem/ruby/default/bin:$PATH
+export PATH=:$HOME/.local/bin:$PATH
+export PATH=:$HOME/.poetry/bin:$PATH
+export PATH=:$HOME/.cargo/bin:$PATH
+export PATH=:$HOME/.nimble/bin:$PATH
+export PATH=:$HOME/.config/bspwm:$PATH
+export PATH=:$HOME/.eggs/bin:$PATH
+export PATH=:$HOME/.luarocks/bin:$PATH
+
+# bspwm related
+PANEL_FIFO=/tmp/panel-fifo
+PANEL_HEIGHT=16
+PANEL_FONT_FAMILY="-*-terminus-bold-r-normal-*-14-*-*-*-c-*-*-1"
+export PANEL_FIFO PANEL_HEIGHT PANEL_FONT_FAMILY
+
+export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
+export PIP_REQUIRE_VIRTUALENV=false
+export TERMCMD=urxvt # needed for ranger
+export QT_QPA_PLATFORMTHEME="qt5ct"
