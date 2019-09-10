@@ -4,6 +4,7 @@
 	signingkey = EB0A458C451465EADAF7EF5A180A39E6DFA79042
 [core]
 	whitespace = trailing-space,space-before-tab
+	autocrlf = input
 [apply]
 	whitespace = fix
 #[branch "master"]
@@ -61,3 +62,5 @@
 	required = true
 [commit]
 	gpgsign = true
+[gpg]
+	program = gpg2
