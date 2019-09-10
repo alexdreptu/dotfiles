@@ -19,7 +19,7 @@ Xft.lcdfilter: lcddefault
 URxvt*termName: rxvt-256color
 !URxvt.geometry: 120x22
 !URxvt.geometry: 120x21
-URxvt.geometry: 134x21
+URxvt.geometry: 140x19
 URxvt*loginShell: true
 URxvt.scrollStyle: rxvt
 URxvt.saveLines: 20000
@@ -41,15 +41,19 @@ URxvt*urgentOnBell: true
 ! scroll back to the bottom on keypress
 !URxvt*scrollTtyKeypress: true
 
-URxvt*font: xft:Ubuntu Mono:size=11
-URxvt*boldFont: xft:Ubuntu Mono:size=11
-!URxvt*font: xft:Fira Code Retina:medium:size=10
-!URxvt*boldFont: xft:Fira Code Retina:medium:size=10
+!URxvt*font: xft:Ubuntu Mono:medium:size=11
+!URxvt*boldFont: xft:Ubuntu Mono:medium:size=11
+!URxvt*font: xft:Fira Mono:medium:size=10
+!URxvt*boldFont: xft:Fira Mono:medium:size=10
+URxvt*font: xft:Office Code Pro Medium:size=10.5
+URxvt*boldFont: xft:Office Code Pro Medium:size=10.5
+!URxvt*font: xft:SF Mono:regular:size=10
+!URxvt*boldFont: xft:SF Mono:regular:size=10
 !URxvt*dynamicColors: true
 !URxvt*inheritPixmap: true
-URxvt*letterSpace: 1
-URxvt*lineSpace: 3
-!URxvt*lineSpace: 1
+URxvt*letterSpace: -1
+!URxvt*lineSpace: 3
+!URxvt*lineSpace: -1
 URxvt*boldMode: false
 URxvt*skipBuiltinGlyphs: true
 
@@ -73,7 +77,7 @@ URxvt*depth: 32
 
 URxvt.perl-ext: default,url-select
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
-URxvt.url-select.launcher: /usr/bin/chrome
+URxvt.url-select.launcher: /usr/bin/brave
 URxvt.url-select.underline: true
 URxvt.underlineURLs: true
 URxvt.matcher.button: 0
@@ -123,6 +127,7 @@ URxvt*foreground: #ffffff
 !URxvt*foreground: #d2c6ec
 !URxvt*foreground: #d8ecc6
 !URxvt*foreground: #f2ffb3
+!URxvt*foreground: #fff2b3
 
 *background: #272822
 *foreground: #ffffff
@@ -136,8 +141,8 @@ URxvt*foreground: #ffffff
 *.color9:       #ff5458
 
 ! green
-*.color2:       #95ffa4
-*.color10:      #62d196
+*.color2:       #b7e085
+*.color10:      #85b34d
 
 ! yellow
 *.color3:       #ffe9aa
