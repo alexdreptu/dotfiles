@@ -1,0 +1,68 @@
+stty -ixon
+bind "Control-s: "
+
+# If not running interactively, don"t do anything
+[ -z "$PS1" ] && return
+
+shopt -s histappend
+shopt -s checkwinsize
+# shopt -s cmdhist
+# eval $(dircolors -b $HOME/.dircolors)
+
+HISTCONTROL=ignoreboth
+HISTIGNORE="ls:pwd:bg:fg:history"
+HISTFILESIZE=10000
+HISTSIZE=10000
+HISTTIMEFORMAT="[%d-%m-%Y %T] => "
+
+# colors
+RESET_COLOR="\[\e[0m\]"
+FG_BLACK="\[\e[0;30m\]"          # foreground black
+FG_RED="\[\e[0;31m\]"            # foreground red
+FG_GREEN="\[\e[0;32m\]"          # foreground green
+FG_YELLOW="\[\e[0;33m\]"         # foreground yellow
+FG_BLUE="\[\e[0;34m\]"           # foreground blue
+FG_MAGENTA="\[\e[0;35m\]"        # foreground magenta
+FG_CYAN="\[\e[0;36m\]"           # foreground cyan
+FG_GRAY="\[\e[0;37m\]"           # foreground gray
+FG_BLACK_BRIGHT="\[\e[1;30m\]"   # foreground black bright
+FG_RED_BRIGHT="\[\e[1;31m\]"     # foreground red bright
+FG_GREEN_BRIGHT="\[\e[1;32m\]"   # foreground green bright
+FG_YELLOW_BRIGHT="\[\e[1;33m\]"  # foreground yellow bright
+FG_BLUE_BRIGHT="\[\e[1;34m\]"    # foreground blue bright
+FG_MAGENTA_BRIGHT="\[\e[1;35m\]" # foreground magenta bright
+FG_CYAN_BRIGHT="\[\e[1;36m\]"    # foreground cyan bright
+FG_GRAY_BRIGHT="\[\e[1;37m\]"    # foreground gray bright
+BG_BLACK="\[\e[40m\]"            # background black
+BG_RED="\[\e[41m\]"              # background red
+BG_GREEN="\[\e[42m\]"            # background green
+BG_YELLOW="\[\e[43m\]"           # background yellow
+BG_BLUE="\[\e[44m\]"             # background blue
+BG_MAGENTA="\[\e[45m\]"          # background magenta
+BG_CYAN="\[\e[46m\]"             # background cyan
+BG_GRAY="\[\e[47m\]"             # background gray
+
+PS1="$FG_GREEN_BRIGHT\u@\h $FG_YELLOW_BRIGHT($FG_YELLOW\W$FG_YELLOW_BRIGHT) $ $RESET_COLOR"
+PS2="$FG_YELLOW_BRIGHT  > $FG_GRAY"
+
+GIT_COMPLETION="/usr/share/git/completion/git-completion.bash"
+
+if [ -f $GIT_COMPLETION ]; then
+	. $GIT_COMPLETION
+fi
+
+if [ -f ~/.aliases ]; then
+	. ~/.aliases
+fi
+
+man() {
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[0;32m") \
+		LESS_TERMCAP_md=$(printf "\e[0;32m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[0;45;37m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;33m") \
+		man "$@"
+}
