@@ -132,34 +132,42 @@ URxvt*foreground: #ffffff
 *background: #272822
 *foreground: #ffffff
 
-! black
-*.color0:       #272822
-*.color8:       #574CBF
+! dark black
+*.color0: #000000
+! bright dark
+*.color8: #808080
 
-! red
-*.color1:       #ff8080
-*.color9:       #ff5458
+! dark red
+*.color1: #ff5458
+! bright red
+*.color9: #ff8080
 
-! green
-*.color2:       #b7e085
-*.color10:      #85b34d
+! dark green
+*.color2: #85b34d
+! bright green
+*.color10: #b7e085
 
-! yellow
-*.color3:       #ffe9aa
-*.color11:      #ffb378
+! dark yellow
+*.color3: #ffb378
+! bright yellow
+*.color11: #ffe9aa
 
-! blue
-*.color4:       #80bfff
-*.color12:      #65b2ff
+! dark blue
+*.color4: #65b2ff
+! bright blue
+*.color12: #80bfff
 
-! magenta
-*.color5:       #c991e1
-*.color13:      #906cff
+! dark magenta
+*.color5: #906cff
+! bright magenta
+*.color13: #c991e1
 
-! cyan
-*.color6:       #aaffe4
-*.color14:      #63f2f1
+! dark cyan
+*.color6: #63f2f1
+! bright cyan
+*.color14: #aaffe4
 
-! white
-*.color7:       #ffffff
-*.color15:      #a6b3cc
+! dark gray
+*.color7: #a6a6a6
+! bright gray
+*.color15: #d9d9d9
