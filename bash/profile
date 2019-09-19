@@ -9,16 +9,18 @@ export NPM_PKG=$HOME/.npm-pkg
 export NPM_BIN=$NPM_PKG/bin
 export NODE_PATH=$NPM_PKG/lib/node_modules
 
-export PATH=:$GOBIN:$PATH
-export PATH=:$NPM_BIN:$PATH
-export PATH=:$HOME/.local/bin:$PATH
-export PATH=:$HOME/.gem/ruby/default/bin:$PATH
-export PATH=:$HOME/.poetry/bin:$PATH
-export PATH=:$HOME/.cargo/bin:$PATH
-export PATH=:$HOME/.nimble/bin:$PATH
-export PATH=:$HOME/.config/bspwm:$PATH
-export PATH=:$HOME/.eggs/bin:$PATH
-export PATH=:$HOME/.luarocks/bin:$PATH
+if declare -F add_to_path >/dev/null; then
+    add_to_path $GOBIN
+    add_to_path $NPM_BIN
+    add_to_path $HOME/.local/bin
+    add_to_path $HOME/.gem/ruby/default/bin
+    add_to_path $HOME/.poetry/bin
+    add_to_path $HOME/.cargo/bin
+    add_to_path $HOME/.nimble/bin
+    add_to_path $HOME/.config/bspwm
+    add_to_path $HOME/.eggs/bin
+    add_to_path $HOME/.luarocks/bin
+fi
 
 # bspwm related
 export PANEL_FIFO=/tmp/panel-fifo

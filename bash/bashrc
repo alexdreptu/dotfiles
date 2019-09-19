@@ -44,25 +44,3 @@ BG_GRAY="\[\e[47m\]"             # background gray
 
 PS1="$FG_GREEN_BRIGHT\u@\h $FG_YELLOW_BRIGHT($FG_YELLOW\W$FG_YELLOW_BRIGHT) $ $RESET_COLOR"
 PS2="$FG_YELLOW_BRIGHT  > $FG_GRAY"
-
-GIT_COMPLETION="/usr/share/git/completion/git-completion.bash"
-
-if [ -f $GIT_COMPLETION ]; then
-	. $GIT_COMPLETION
-fi
-
-if [ -f ~/.aliases ]; then
-	. ~/.aliases
-fi
-
-man() {
-	env \
-		LESS_TERMCAP_mb=$(printf "\e[1;32m") \
-		LESS_TERMCAP_md=$(printf "\e[1;32m") \
-		LESS_TERMCAP_me=$(printf "\e[0m") \
-		LESS_TERMCAP_se=$(printf "\e[0m") \
-		LESS_TERMCAP_so=$(printf "\e[1;45;37m") \
-		LESS_TERMCAP_ue=$(printf "\e[0m") \
-		LESS_TERMCAP_us=$(printf "\e[0;33m") \
-		man "$@"
-}

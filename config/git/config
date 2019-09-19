@@ -16,10 +16,10 @@
 [credential]
 	helper = cache --timeout=3600
 [alias]
-	lol = log --pretty=\"format:%C(blue bold)::%Creset %C(magenta bold)%h%Creset - %C(white bold)%s%Creset - %C(green bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(yellow)%cr%Creset)\"
+	lol = log --pretty=\"format:%C(blue bold)::%Creset %C(yellow)%h%Creset - %C(white bold)%s%Creset - %C(green bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(yellow)%cr%Creset)\"
 	stat = status -s -b --ignored
-	lc = log --pretty=\"format:%C(blue bold)::%Creset %C(magenta  bold)%h%Creset - %C(white bold)%s%Creset - %C(green bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(yellow)%cr%Creset)\" --branches --not --remotes
-	lm = log --pretty=\"format:%C(blue bold)::%Creset %C(magenta bold)%h%Creset - %C(white bold)%s%Creset - %C(green bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(yellow)%cr%Creset)\" --merges
+	lc = log --pretty=\"format:%C(blue bold)::%Creset %C(yellow)%h%Creset - %C(white bold)%s%Creset - %C(green bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(yellow)%cr%Creset)\" --branches --not --remotes
+	lm = log --pretty=\"format:%C(blue bold)::%Creset %C(yellow)%h%Creset - %C(white bold)%s%Creset - %C(green bold)%an%Creset <%C(blue bold)%ae%Creset> (%C(yellow)%cr%Creset)\" --merges
 	lf = ls-files
 	unstage = reset HEAD --
 	drop = checkout --
