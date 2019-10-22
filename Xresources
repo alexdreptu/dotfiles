@@ -85,7 +85,7 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-o: perl:url-select:select_next
 URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.copyCommand: xsel -ib
 URxvt.pasteCommand: xsel -ob
@@ -128,6 +128,9 @@ URxvt*foreground: #ffffff
 !URxvt*foreground: #d8ecc6
 !URxvt*foreground: #f2ffb3
 !URxvt*foreground: #fff2b3
+
+URxvt.highlightColor: #75609f
+URxvt.highlightTextColor: #ffffff
 
 *background: #272822
 *foreground: #ffffff
