@@ -13,3 +13,7 @@ fi
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
+
+if [ -f ~/.dircolors ]; then
+    . ~/.dircolors
+fi
