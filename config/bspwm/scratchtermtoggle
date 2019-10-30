@@ -1,0 +1,15 @@
+#!/bin/bash
+
+main() {
+    local ids=$(xdotool search --classname scratchterm)
+
+    if [[ -n $ids ]]; then
+        while read -r id; do
+            bspc node $id --flag hidden -d $(bspc query -D -d) -f
+        done <<<$ids
+    else
+        urxvtc -name scratchterm
+    fi
+}
+
+main

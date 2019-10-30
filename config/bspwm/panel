@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if xdo id -a "$PANEL_WM_NAME" >/dev/null; then
+    printf "%s\n" "The panel is already running." >&2
+    exit 1
+fi
+
+trap "trap - TERM; kill 0" INT TERM QUIT EXIT
+
+if [ -e "$PANEL_FIFO" ]; then
+    rm "$PANEL_FIFO"
+fi
+mkfifo "$PANEL_FIFO"
+
+xtitle -t 100 -sf 'T%s\n' >"$PANEL_FIFO" &
+volume -s -i 3600 -d pulse -f 'V%s %i' >"$PANEL_FIFO" &
+clock -s -i 1 -f 'S%d-%m-%Y %H:%M:%S' >"$PANEL_FIFO" &
+bspc subscribe report >"$PANEL_FIFO" &
+
+. panel_colors
+
+panel_bar <"$PANEL_FIFO" | lemonbar -u 2 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -f "$PANEL_FONT_ICONS1" -f "$PANEL_FONT_ICONS2" -f "$PANEL_FONT_ICONS3" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh &
+
+wid=$(xdo id -m -a "$PANEL_WM_NAME")
+xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"
+
+wait

@@ -1,0 +1,170 @@
+#!/bin/bash
+
+. panel_colors
+
+num_mon=$(bspc query -M | wc -l)
+
+while read -r line; do
+    case $line in
+        S*)
+            # clock output
+            sys="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{B-}%{F-}"
+            ;;
+        V*)
+            # volume output
+            percent=$(cut -d ' ' -f 2 <<<$line)
+            if [ $percent -lt $PANEL_VOLUME_NORMAL_STEP ]; then
+                VOL_FG=$COLOR_VOLUME_LOW_FG
+                VOL_BG=$COLOR_VOLUME_LOW_BG
+            fi
+
+            if [ $percent -ge $PANEL_VOLUME_NORMAL_STEP ]; then
+                VOL_FG=$COLOR_VOLUME_NORMAL_FG
+                VOL_BG=$COLOR_VOLUME_NORMAL_BG
+            fi
+
+            if [ $percent -ge $PANEL_VOLUME_MEDIUM_STEP ]; then
+                VOL_FG=$COLOR_VOLUME_MEDIUM_FG
+                VOL_BG=$COLOR_VOLUME_MEDIUM_BG
+            fi
+
+            if [ $percent -ge $PANEL_VOLUME_HIGH_STEP ]; then
+                VOL_FG=$COLOR_VOLUME_HIGH_FG
+                VOL_BG=$COLOR_VOLUME_HIGH_BG
+            fi
+
+            if [ $percent -ge $PANEL_VOLUME_VERY_HIGH_STEP ]; then
+                VOL_FG=$COLOR_VOLUME_VERY_HIGH_FG
+                VOL_BG=$COLOR_VOLUME_VERY_HIGH_BG
+            fi
+
+            case $line in
+                *on*)
+                    ICON=$PANEL_ICON_VOLUME_ON
+                    ICON_FG=$COLOR_VOLUME_ON_FG
+                    ICON_BG=$COLOR_VOLUME_ON_BG
+                    status="%{F$ICON_FG}%{B$ICON_BG}$ICON%{B-}%{F-}"
+                    ;;
+                *off*)
+                    ICON=$PANEL_ICON_VOLUME_OFF
+                    ICON_FG=$COLOR_VOLUME_OFF_FG
+                    ICON_BG=$COLOR_VOLUME_OFF_BG
+                    status="%{F$ICON_FG}%{B$ICON_BG}$ICON%{B-}%{F-}"
+                    ;;
+            esac
+            volume="${status} %{F$VOL_FG}%{B$VOL_BG}${percent}% %{B-}%{F-}"
+            ;;
+        T*)
+            # xtitle output
+            UL=$COLOR_DEFAULT_BG
+            title="%{F$COLOR_TITLE_FG}%{B$COLOR_TITLE_BG} %{U$UL}%{+u}${line#?}%{-u} %{B-}%{F-}"
+            ;;
+        W*)
+            # bspwm's state
+            wm=
+            IFS=":"
+            set -- ${line#?}
+            while [ $# -gt 0 ]; do
+                item=$1
+                name=${item#?}
+                case $item in
+                    [mM]*)
+                        case $item in
+                            m*)
+                                # monitor
+                                FG=$COLOR_MONITOR_FG
+                                BG=$COLOR_MONITOR_BG
+                                on_focused_monitor=
+                                ;;
+                            M*)
+                                # focused monitor
+                                FG=$COLOR_FOCUSED_MONITOR_FG
+                                BG=$COLOR_FOCUSED_MONITOR_BG
+                                on_focused_monitor=1
+                                UL=$COLOR_FOCUSED_MONITOR_FG
+                                ;;
+                        esac
+                        [ $num_mon -lt 2 ] && shift && continue
+                        wm="${wm}"
+                        ;;
+                    [fFoOuU]*)
+                        case $item in
+                            f*)
+                                # free desktop
+                                FG=$COLOR_FREE_FG
+                                BG=$COLOR_FREE_BG
+                                UL=$BG
+                                ;;
+                            F*)
+                                if [ "$on_focused_monitor" ]; then
+                                    # focused free desktop
+                                    FG=$COLOR_FOCUSED_FREE_FG
+                                    BG=$COLOR_FOCUSED_FREE_BG
+                                    UL=$COLOR_FOCUSED_MONITOR_FG
+                                else
+                                    # active free desktop
+                                    FG=$COLOR_FREE_FG
+                                    BG=$COLOR_FREE_BG
+                                    UL=$COLOR_FOCUSED_FREE_BG
+                                fi
+                                ;;
+                            o*)
+                                # occupied desktop
+                                FG=$COLOR_OCCUPIED_FG
+                                BG=$COLOR_OCCUPIED_BG
+                                UL=$BG
+                                ;;
+                            O*)
+                                if [ "$on_focused_monitor" ]; then
+                                    # focused occupied desktop
+                                    FG=$COLOR_FOCUSED_OCCUPIED_FG
+                                    BG=$COLOR_FOCUSED_OCCUPIED_BG
+                                    UL=$FG
+                                else
+                                    # active occupied desktop
+                                    FG=$COLOR_OCCUPIED_FG
+                                    BG=$COLOR_OCCUPIED_BG
+                                    UL=$COLOR_FOCUSED_OCCUPIED_BG
+                                fi
+                                ;;
+                            u*)
+                                # urgent desktop
+                                FG=$COLOR_URGENT_FG
+                                BG=$COLOR_URGENT_BG
+                                UL=$BG
+                                ;;
+                            U*)
+                                if [ "$on_focused_monitor" ]; then
+                                    # focused urgent desktop
+                                    FG=$COLOR_FOCUSED_URGENT_FG
+                                    BG=$COLOR_FOCUSED_URGENT_BG
+                                    UL=$BG
+                                else
+                                    # active urgent desktop
+                                    FG=$COLOR_URGENT_FG
+                                    BG=$COLOR_URGENT_BG
+                                    UL=$COLOR_FOCUSED_URGENT_BG
+                                fi
+                                ;;
+                        esac
+                        wm="${wm} %{F${FG}}%{B${BG}}%{U${UL}}%{+o}${name}%{-o} %{B-}%{F-}"
+                        ;;
+                    [LTG]*)
+                        # layout, state and flags
+                        # case $name in
+                        #     T) ICON=$PANEL_ICON_TILE ;;
+                        #     P) ICON=$PANEL_ICON_PSEUDO_TILE ;;
+                        #     M) ICON=$PANEL_ICON_MONOCLE ;;
+                        #     F) ICON=$PANEL_ICON_FLOAT ;;
+                        #     =) ICON=$PANEL_ICON_FULLSCREEN ;;
+                        #     S) ICON="S?" ;;
+                        # esac
+                        wm="${wm}%{F$COLOR_STATE_FG}%{B$COLOR_STATE_BG}$PANEL_ICON_SEPARATOR ${name} %{B-}%{F-}"
+                        ;;
+                esac
+                shift
+            done
+            ;;
+    esac
+    printf '%s\n' "%{l}${wm}%{c}${title}%{r}${volume} ${sys}"
+done
