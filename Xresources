@@ -19,7 +19,7 @@ Xft.lcdfilter: lcddefault
 URxvt*termName: rxvt-256color
 !URxvt.geometry: 120x22
 !URxvt.geometry: 120x21
-URxvt.geometry: 140x19
+URxvt.geometry: 135x19
 URxvt*loginShell: true
 URxvt.scrollStyle: rxvt
 URxvt.saveLines: 20000
@@ -43,8 +43,8 @@ URxvt*urgentOnBell: true
 
 !URxvt*font: xft:Ubuntu Mono:medium:size=11
 !URxvt*boldFont: xft:Ubuntu Mono:medium:size=11
-!URxvt*font: xft:Fira Mono:medium:size=10
-!URxvt*boldFont: xft:Fira Mono:medium:size=10
+!URxvt*font: xft:Fira Mono:medium:size=10.5
+!URxvt*boldFont: xft:Fira Mono:medium:size=10.5
 URxvt*font: xft:Office Code Pro Medium:size=10.5
 URxvt*boldFont: xft:Office Code Pro Medium:size=10.5
 !URxvt*font: xft:SF Mono:regular:size=10
@@ -52,7 +52,7 @@ URxvt*boldFont: xft:Office Code Pro Medium:size=10.5
 !URxvt*dynamicColors: true
 !URxvt*inheritPixmap: true
 URxvt*letterSpace: -1
-!URxvt*lineSpace: 3
+!URxvt*lineSpace: 1
 !URxvt*lineSpace: -1
 URxvt*boldMode: false
 URxvt*skipBuiltinGlyphs: true
@@ -77,7 +77,7 @@ URxvt*depth: 32
 
 URxvt.perl-ext: default,url-select
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
-URxvt.url-select.launcher: /usr/bin/brave
+URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 URxvt.underlineURLs: true
 URxvt.matcher.button: 0
