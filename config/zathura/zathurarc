@@ -1,0 +1,37 @@
+set selection-clipboard clipboard
+set window-title-home-tilde
+"set window-title-basename
+"set window-title-page
+set statusbar-home-tilde
+set selection-notification false
+set zoom-min 10
+
+set font "Carlito Bold 13"
+"set guioptions "s"
+
+set default-fg "#d1d1d1"
+set default-bg "#282729"
+
+set statusbar-fg "#ffffff"
+set statusbar-bg "#302f32"
+
+set inputbar-fg "#ffffff"
+set inputbar-bg "#302f32"
+
+set notification-fg "#ffffff"
+set notification-bg "#a0522d"
+
+set notification-error-fg "#ffffff"
+set notification-error-bg "#9f2d2d"
+
+set scroll-step 50
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+unmap +
+unmap -
+unmap =
+unmap <C-i>
+unmap <C-o>
+map <C-i> zoom in
+map <C-o> zoom out
