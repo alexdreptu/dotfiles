@@ -1,15 +1,29 @@
+set -o PROMPT_SUBST
 autoload -U compinit
+autoload -Uz select-word-style
+select-word-style bash
+autoload -Uz run-help
+zstyle ':completion:*' rehash true
+unalias run-help
+alias help='run-help'
 
 compinit
-
-PROMPT="%F{green}%n@%m%f %F{yellow}$ %f"
-RPROMPT="%F{yellow}[%B%F{yellow}%~%f%b%F{yellow}]%f"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+ZLE_REMOVE_SUFFIX_CHARS=''
+
+PROMPT='[%B%F{green}%n@%m%f%b]%f%b%B%F{yellow}$%f%b '
+RPROMPT='[%F{yellow}%~%f]'
+#RPROMPT='[%F{yellow}%~%f] [$(check_exit_code)]'
+
 bindkey -e command
+
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
+fi
 
 if [ -f ~/.aliases ]; then
     . ~/.aliases
