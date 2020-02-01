@@ -1,21 +1,22 @@
 rofi.modi: window,run,ssh
 rofi.opacity: 100
-rofi.width: 650
-rofi.lines: 12
+rofi.width: 600
+rofi.lines: 10
 rofi.columns: 1
 rofi.separator-style: none
 rofi.hide-scrollbar: true
-!rofi.font: Fira Mono Medium 11.5
-rofi.font: Office Code Pro Medium 11
-!rofi.font: SF Mono Regular 10.5
+rofi.font: Office Code Pro Medium 11.5
+!rofi.font: Source Code Pro Semibold 11.5
+!rofi.font: SF Mono Semibold 11
+!rofi.font: IBM Plex Mono Semibold 11
 
 rofi.fg: white
 rofi.bg: #272822 
 rofi.color-enabled: true
-rofi.color-normal: #302f32,white,#302f32,#75609f,white
+rofi.color-normal: #353437,white,#353437,#8b70c2,white
 rofi.color-urgent: #4d2626,white,#4d2626,#274d27,white
-rofi.color-active: #302f32,white,#302f32,#75609f,white
-rofi.color-window: #302f32,#ccb3ff
+rofi.color-active: #353437,white,#353437,#8b70c2,white
+rofi.color-window: #353437,#ccb3ff
 
 rofi.fg-active: #26264d
 rofi.bg-active: #26264d
@@ -38,8 +39,13 @@ rofi.bw: 2
 rofi.location: 0
 rofi.padding: 0
 rofi.yoffset: -100
-rofi.xoffset: 0
+#rofi.yoffset: 21
+#rofi.xoffset: -708
 rofi.fixed-num-lines: false
+rofi.line-margin: 2
+rofi.line-padding: 3
+rofi.eh: 1
+rofi.sidebar-mode: true
 rofi.terminal: urxvtc
 rofi.ssh-client: ssh
 rofi.ssh-command: {terminal} -e {ssh-client} {host}
@@ -51,7 +57,6 @@ rofi.levenshtein-sort: true
 rofi.case-sensitive: false
 rofi.sidebar-mode: false
 rofi.lazy-filter-limit: 5000
-rofi.eh: 1
 rofi.auto-select: false
 rofi.parse-hosts: false
 rofi.combi-modi: window,run
